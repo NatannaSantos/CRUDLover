@@ -13,12 +13,12 @@ String modelo,
 @NotNull
 String fabricante, 
 
-@Past
+@Pattern(regexp = "\\d{2}/\\d{2}/\\d{4}")
 @NotNull
 String dataFabricacao,
 
 @NotBlank
-@Pattern(regexp = "^[0-9]{10},[0-9]{2}")
+@Pattern(regexp = "^\\d{10},\\d{2}")
 double valor, 
 
 @NotBlank

@@ -13,6 +13,8 @@ import com.modelaai.api.dto.CarDTO;
 import com.modelaai.api.model.Car;
 import com.modelaai.api.repository.CarRepository;
 
+import jakarta.validation.Valid;
+
 
 @RestController
 @RequestMapping("/api/cars")
@@ -27,7 +29,7 @@ public class CarController {
     }
 
     @PostMapping
-    public void createCar(@RequestBody CarDTO req){
+    public void createCar(@RequestBody @Valid CarDTO req){
         repository.save(new Car(req));      
     }
 }
